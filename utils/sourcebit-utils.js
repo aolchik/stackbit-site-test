@@ -1,7 +1,8 @@
 import { sourcebitDataClient } from 'sourcebit-target-next';
 
 async function allDocuments() {
-  return (await sourcebitDataClient.getData()).objects;
+  const docs = (await sourcebitDataClient.getData()).objects;
+  return docs
 }
 
 /**
@@ -12,7 +13,8 @@ async function allDocuments() {
  * @returns {array} Sourcebit data objects
  */
 export async function pagesByLayout(layout) {
-  return (await allDocuments()).filter((doc) => doc?.frontmatter?.layout === layout);
+  const docs =  (await allDocuments()).filter((doc) => doc?.frontmatter?.layout === layout);
+  return docs
 }
 
 /**
