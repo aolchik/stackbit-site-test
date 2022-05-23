@@ -8,6 +8,9 @@ const componentsMap = {
   HeroSection: dynamic(() =>
     namedComponent(import("./HeroSection"), "HeroSection")
   ),
+  PostFeed: dynamic(() =>
+    namedComponent(import("./PostFeed"), "PostFeed")
+  ),
 };
 
 export const DynamicComponent = (props) => {

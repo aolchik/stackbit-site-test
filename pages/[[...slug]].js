@@ -32,14 +32,21 @@ const withHotContentReload = hotContentReload();
 export default withHotContentReload(FlexiblePage);
 
 export const getStaticProps = async ({ params }) => {
-  const allPages = await pagesByLayout("Page");
-  const siteConfig = await dataByType("SiteConfig");
   const pagePath =
     typeof params?.slug === "string"
       ? params?.slug
-      : "/" + (params?.slug || []).join("/");
-  const page = allPages.find((page) => pageUrlPath(page) === pagePath);
-  return { props: { page, footer: siteConfig.footer } };
+      : "/" + (params?.slug || []).join("/")
+  const allPages = await pagesByLayout("Page")
+  const siteConfig = await dataByType("SiteConfig")
+  const page = allPages.find((page) => pageUrlPath(page) === pagePath)
+  const posts = (await pagesByLayout('Post')).sort((a, b) => {
+    return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+  })
+  page.frontmatter.sections.map((section) => {
+    if (section.type === 'PostFeed') section.posts = posts
+  })
+
+  return { props: { page, footer: siteConfig.footer } }
 };
 
 export const getStaticPaths = async () => {

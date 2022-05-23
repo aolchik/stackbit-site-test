@@ -1,0 +1,21 @@
+type: object
+name: PostFeed
+label: Post Feed
+labelField: heading
+groups:
+  - sectionComponent
+fields:
+  - type: string
+    name: heading
+    label: Title
+    default: Post Feed Title
+  - type: markdown
+    name: subheading
+    default: Subheading goes here ...
+  - type: style
+    name: styles
+    styles:
+      self:
+        padding: ['y0', 'y32']
+      heading:
+        margin: ['b0','b32']
