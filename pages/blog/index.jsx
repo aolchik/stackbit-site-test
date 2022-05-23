@@ -1,4 +1,4 @@
-import PostCard from '../../components/PostCard'
+import { PostCard } from '../../components/PostCard'
 import { pagesByLayout } from '../../utils/sourcebit-utils'
 
 const BlogPage = ({ page, posts }) => {

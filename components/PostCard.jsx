@@ -3,7 +3,7 @@ import Markdown from 'markdown-to-jsx'
 
 import { pageUrlPath } from '../utils/page-utils'
 
-export default function PostCard({ post }) {
+export const PostCard = ({ post }) => {
   return(
     <Link href={pageUrlPath(post)}>
       <a data-sb-object-id={post.__metadata.id}>
