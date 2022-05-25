@@ -1,3 +1,7 @@
+
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --color-white: #ffffff;
   --color-black: #02001d;
@@ -175,8 +179,10 @@ p {
 /* --- Button --- */
 
 .button {
-  background-color: var(--color-yellow);
-  border: 0.1rem solid var(--color-yellow);
+  @apply bg-primary
+    border-4
+    border-solid
+    border-primary;
   border-radius: 0.2rem;
   color: var(--color-black);
   display: inline-block;

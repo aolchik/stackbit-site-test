@@ -39,14 +39,15 @@ sections:
           components in the visual editor.
         url: 'https://docs.stackbit.com/how-to-guides/styles/'
   - type: PostFeed
-    heading: Post Feed Title
-    subheading: Subheading goes here ...
+    heading: Recent Posts
+    subheading: |
+      Here is a list of recent posts.
     styles:
       self:
         padding:
-          top: '0'
-          bottom: '0'
+          top: '32'
+          bottom: '32'
       heading:
         margin:
-          bottom: '0'
+          bottom: '32'
 ---
